@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <style media="screen">
+    * {
+      background-color: black;
+      color: white;
+      font-size: 30px;
+    }
+
+    </style>
+    <!-- JS -->
+    <script type="text/javascript">
+
+    window.onload = function() {
+      //selecionar objeto html
+      var s = document.getElementById("c");          //ID
+          s = document.getElementsByName("");       //NAME
+          s = document.getElementsByClassName("");  //CLASS
+          s = document.getElementsByTagName("");    //TAG
+          s = document.querySelector("body h2"); //1 elemento igual ao CSS
+          s = document.querySelectorAll("body ul li"); //todos elemento igual ao CSS
+
+      s.innerHTML = "novo texto"; //alterando conteudo
+      s.style.color = "#FFFF00"; //alterando estilo do componente HTML, pouco generica
+      s.setAttribute("style", "color:#FFFF00"); //Forma generica, fuciona em todos componentes
+
+      //Coleçoes
+      var c = document.images; //retorna array todas as IMG
+          c = document.links; //retorna array com todos LINK
+          c = document.forms; //retorna array com todos FORM
+
+
+    }
+
+
+
+
+
+    </script>
+      <!-- JS -->
+  </head>
+  <body>
+
+  </body>
+</html>

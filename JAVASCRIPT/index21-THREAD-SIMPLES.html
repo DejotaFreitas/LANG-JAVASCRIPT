@@ -1,0 +1,42 @@
+ <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <!-- JS -->
+    <script type="text/javascript">
+
+    window.onload = function() {
+      new Thread("ssss", 1000);
+      new Thread("zzzz", 2000);
+    }
+
+
+    var Thread = function(texto, intervalo) {
+      setInterval(
+        function(){
+        addElement(texto);
+      }
+      , intervalo);
+    }
+
+    function addElement(texto) {
+      var divi = document.getElementById('divi');
+      var paragrafo = document.createElement("p");
+      var texto = document.createTextNode(texto);
+      paragrafo.appendChild(texto);
+      divi.appendChild(paragrafo);
+    }
+
+
+
+    </script>
+    <!-- JS -->
+  </head>
+  <body>
+
+    <div id="divi">
+
+    </div>
+
+  </body>
+</html>

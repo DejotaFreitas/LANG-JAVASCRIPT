@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <style media="screen">
+    * {
+      background-color: black;
+      color: white;
+      font-size: 30px;
+    }
+    </style>
+
+    <!-- JS -->
+    <script type="text/javascript">
+
+    window.onload = function() {
+
+      document.getElementById("botao").onclick = function() {
+        requisitarAjax("divi", "zarquivo.txt");
+      }
+
+
+    }
+
+    function iniciaAjax() {
+      var ajax = null;
+      if (window.XMLHttpRequest) {
+        ajax = new XMLHttpRequest();
+      } else if (window.ActiveXObject) {
+        try {
+          ajax = new ActiveXObject("Msxml2.XMLHTTP");
+        } catch (e) {
+          ajax = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+      }
+      return ajax;
+    }
+
+    function requisitarAjax(id, url) {
+      var ajax = iniciaAjax();
+      carregandoAjax(id);
+      if (ajax.readyState == 4 && ajax.status == 200) {
+          var elemento = document.getElementById(id);
+          if (elemento.hasChildNodes()) {
+            elemento.removeChild(c.lastChild);
+          }
+          elemento.innerHTML = ajax.responseText;
+      }
+      ajax.open("GET", url, true);
+      ajax.send();
+    }
+
+    function carregandoAjax(id) {
+      var c = document.getElementById(id);
+      if (c.hasChildNodes()) {
+        c.removeChild(c.lastChild);
+      }
+      var img = document.createElement("img");
+      img.setAttribute("src", "img/ajaxloader.gif");
+      c.appendChild(img);
+    }
+
+
+    </script>
+      <!-- JS -->
+  </head>
+  <body>
+
+    <div id="divi">
+        <button id="botao" type="button" name="button">Botão</button>
+        <p id="paragrafo"></p>
+    </div>
+
+  </body>
+</html>

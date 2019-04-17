@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <style media="screen">
+    * {
+      background-color: black;
+      color: white;
+      font-size: 30px;
+    }
+    </style>
+    <!-- JS -->
+    <script type="text/javascript">
+
+    window.onload = function() {
+
+    //OBJETOS
+    var Aluno = function(){
+      this.nome;
+      this.nota1;
+      this.nota2;
+      this.media;
+      this.calcularMedia = function() {
+        this.media = (this.nota1+this.nota2)/2;
+      }
+    }
+
+    var aluno = new Aluno();
+    aluno.nome = prompt("digite seu nome.");
+    aluno.nota1 = parseFloat(prompt("digite sua nota 1."));
+    aluno.nota2 = parseFloat(prompt("digite sua nota 2."));
+    aluno.calcularMedia();
+
+    document.writeln(aluno.nome+"="+aluno.media +"<br>");
+
+
+
+    }
+
+    </script>
+      <!-- JS -->
+  </head>
+  <body>
+
+  </body>
+</html>

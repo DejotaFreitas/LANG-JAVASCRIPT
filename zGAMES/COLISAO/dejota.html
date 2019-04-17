@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+	<title></title>
+	</head>
+	<style>
+	canvas{
+		border: solid 1px;
+		position: absolute;
+		margin-right: 50%;
+		margin-left: 50%;
+		left: -300px;
+		top: 30px;
+	}
+</style>
+<body>
+	<canvas width="600" height="400"></canvas>
+</body>
+
+<script>
+	//Constantes para movimentação
+	var LEFT = 37, UP = 38, RIGHT = 39, DOWN = 40;
+	//Constante que define o tamanho dos objetos
+	var SIZE = 50;
+	//Associação da variável cnv ao elemento canvas
+	var cnv = document.querySelector("canvas");
+	//Atribuição do contexto 2d à variável ctx
+	var ctx = cnv.getContext("2d");
+	//Variáveis que controlarão a posição do objeto
+	var posX = 50;
+	var posY = 50;
+	//Variável que determina a cor do objeto
+	var objColor = "#00f";
+	//Variáveis que estabelecem a posição do bloco
+	var blockX = cnv.width/2 - 25;
+	var blockY = cnv.height/2 - 25;
+	//Variáveis que controlam a movimentação
+	var mvLeft = mvUp = mvRight = mvDown = false;
+
+
+	function colidiu(xc, yc, lc, ac, xo, yo, lo, ao) {
+	  lc = xc + lc;
+	  ac = yc + ac;
+	  lo = xo + lo;
+	  ao = yo + ao;
+	  if ( lc >= xo && yc < ao && ac > yo && xc < lo ) { //DIREITA
+	    objColor = "#f00";
+			console.log("DIREITA");
+	  } else if ( ac >= yo && lc > xo && xc < lo && yc < ao ) { //BAIXO
+	    objColor = "#f00";
+			console.log("baixo");
+	  } else if ( xc <= lo &&  yc < ao && ac > yo && lc > xo ) { //ESQUERDA
+	    objColor = "#f00";
+			console.log("esquerda");
+	  } else if ( yc <= ao && lc > xo && xc < lo && ac > yo ) { //CIMA
+	    objColor = "#f00";
+				console.log("cima");
+	  } else {
+	    objColor = "#00f";
+	  }
+	}
+
+	//desenha na tela
+	function draw(){
+		ctx.clearRect(0,0,cnv.width,cnv.height);
+		//muda a cor para preto e desenha no centro da tela
+		ctx.fillStyle = "#000";
+		ctx.fillRect(blockX,blockY,SIZE,SIZE);
+		//Muda a cor do contexto segundo a cor do objeto
+		ctx.fillStyle = objColor;
+		ctx.fillRect(posX,posY,SIZE,SIZE);
+	}
+
+	//Atualiza a posição do objeto
+	function updateBlock(){
+		if(mvUp){
+			posY--;
+		}
+		if(mvDown){
+			posY++;
+		}
+		if(mvLeft){
+			posX--;
+		}
+		if(mvRight){
+			posX++;
+		}
+	}
+
+	//Entrada de comandos
+	//Move o objeto
+	window.addEventListener("keydown",keydownHandler,false);
+
+	function keydownHandler(e){
+		var key = e.keyCode;
+		switch(key){
+			case UP:
+				mvUp = true;
+				break;
+			case DOWN:
+				mvDown = true;
+				break;
+			case LEFT:
+				mvLeft = true;
+				break;
+			case RIGHT:
+				mvRight = true;
+				break;
+		}
+	}
+
+	//Para o objeto
+	window.addEventListener("keyup",keyupHandler,false);
+	function keyupHandler(e){
+		var key = e.keyCode;
+		switch(key){
+			case UP:
+				mvUp = false;
+				break;
+			case DOWN:
+				mvDown = false;
+				break;
+			case LEFT:
+				mvLeft = false;
+				break;
+			case RIGHT:
+				mvRight = false;
+				break;
+		}
+	}
+
+
+
+	//atualiza os objetos
+	function update(){
+		updateBlock();
+		colidiu(posX, posY, SIZE, SIZE, blockX, blockY, SIZE, SIZE);
+		draw();
+	}
+
+	//Repetição
+	function loop(){
+		update();
+		setTimeout(loop, 10);
+	}
+	loop();
+
+</script>
+</html>

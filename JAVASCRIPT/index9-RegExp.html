@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <!-- JS -->
+    <script type="text/javascript">
+
+    //RegExp - expreçoes regulares
+    var texto = "O JavaScript é uma linguagem cheio dos javascript";
+    //Pesquisa se tem no texto, retorna um boolean
+    document.writeln( /JavaScript/.test(texto) +"<br>");
+    //i = ignorando maiusculas e minusculas
+    document.writeln( /javascript/i.test(texto) +"<br>");
+    //g = pesquisa em todo texto
+    document.writeln( /javascript/g.test(texto) +"<br>");
+    //m = procuras todas as linhas
+    document.writeln( /javascript/m.test(texto) +"<br>");
+    //retorn a primeira ocorrencia em string
+    document.writeln( /javascript/.exec(texto) +"<br>");
+    //texto.match = retorn TODAS ocorrencia em Array
+    //g = pesquisa em todo texto, trazendo todas ocorrencioas
+    document.writeln( texto.match(/javascript/ig) +"<br>");
+    //susbistituir palavras javascript por PHP
+    document.writeln( texto.replace(/javascript/ig, "PHP") +"<br>");
+
+
+    //encontra qualquer caracter
+    document.writeln( /./.test(texto) +"<br>");
+    //De A a Z, 0 a 9 e Anderline (_)
+    document.writeln( /\w/.test(texto) +"<br>");
+    //Que NÃO seja de A a Z, 0 a 9 e Anderline (_)
+    document.writeln( /\W/.test(texto) +"<br>");
+    //verifica se tem espaços no texto
+    document.writeln( /\s/.test(texto) +"<br>");
+    //verifica se tem numero no texto
+    document.writeln( /\d/.test(texto) +"<br>");
+    //verifica se não é numero inteiro no texto
+    document.writeln( /\D/.test(texto) +"<br>");
+    //verifica se o texto começa com que vem depois do ^
+    document.writeln( /^O JavaScript/.test(texto) +"<br>");
+    //verifica se texto termina com que vem antes do $
+    document.writeln( /javascript$/.test(texto) +"<br>");
+
+    //CRIANDO PADRAO PRA CEP
+    document.writeln( /^\d{5}-\d{3}$/.test("62930-000") +"<br>");
+
+    // CRIANDO PADRAO PRA DATA
+    // Colocar barra = \/
+    // \w{2} = tem 2 caracteres exatamento
+        // \w{2,} = no minimo 2 caracteres
+    // d{2,4} de 2 a 4 digitos o ano = 88 ou 1988
+    document.writeln( /^\d{2}\/\d{2}\/\d{4}$/.test("06/12/1988") +"<br>");
+
+    //CRIANDO PADRAO PRA EMAIL
+    //  + = tem 1 ou mais caracteres
+    //  * = tem 0 pu mais caracteres
+    //  ? = tem 0 ou 1 caracteres
+    // \w{2} = tem 2 caracteres exatamento
+    // \w{2,} = no minimo 2 caracteres
+    //  pra colocar ponto tem usar caracter de escape = \.
+    //  SE QUISER PROCURAR UM EMAIL NO MEIO DE UM TEXTO É SO TIRAR ^$
+    document.writeln( /^\w+@\w+\.\w{2,3}$/.test("dejota@email.com") +"<br>");
+
+    //procurando a palavra CAU ou CEU
+    document.writeln( /c[ae]u/.test("ceu") +"<br>");
+
+    //procurndo começa com C e termina com U
+    document.writeln( /C[\w]*U/.test("C4sfd5aU") +"<br>");
+
+    //procurando que so tenha letras entre C e U
+    document.writeln( /C[a-z]*U/.test("CsdasdasdasfweU") +"<br>");
+
+    //procurando que so tenha Numeros entre C e U
+    document.writeln( /C[0-9]*U/.test("C0123456789U") +"<br>");
+
+    //procurando a palavra com digitos ou virgulas
+    document.writeln( /\d[\d\.\,]*/.test("20,65") +"<br>");
+
+    //Alterando URL
+    var url = "www.dejota.com/clientes-2011.xhtml";
+    //parentese () pega seu conteudo de com colcoa em variveis $número
+    // $1 = (www.dejota.com)
+    // $2 = (\w{2,})
+    // $3 = (\d{4})
+    var reurl = /(www.dejota.com)\/(\w{2,})-(\d{4})\.xhtml/;
+    document.writeln( reurl.test(url) +"<br>");
+    document.writeln( url.replace(reurl, "https://$1/$3/$2.html") +"<br>");
+
+
+    </script>
+      <!-- JS -->
+  </head>
+  <body>
+
+  </body>
+</html>

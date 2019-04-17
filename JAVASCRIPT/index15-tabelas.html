@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <style media="screen">
+    * {
+      background-color: black;
+      color: white;
+      font-size: 30px;
+    }
+
+    </style>
+    <!-- JS -->
+    <script type="text/javascript">
+
+    window.onload = function() {
+
+      //TABELAS
+      var t = document.getElementsByTagName("table").item(0); //item(0) ou [0];
+      //adicionando
+      var linha = t.insertRow(-1); //criar nova lina no final
+      var celula0 = linha.insertCell(0); //criando celulas na linha
+      celula0.appendChild(document.createTextNode("Celula0")); // add conteudo
+      var celula1 = linha.insertCell(1); //criando celulas na linha
+      celula1.appendChild(document.createTextNode("Celula1")); // add conteudo
+      var celula2 = linha.insertCell(1); //criando celulas na linha
+      celula2.appendChild(document.createTextNode("Celula2")); // add conteudo
+
+      //excluindo linha apos dois segundos
+      setTimeout(function(){t.deleteRow(0)}, 2000);
+
+    }
+
+    </script>
+      <!-- JS -->
+  </head>
+  <body>
+
+    <table>
+      <tr>
+        <td>Dejota</td>
+        <td>Dejota02</td>
+      </tr>
+    </table>
+
+  </body>
+</html>

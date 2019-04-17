@@ -1,0 +1,61 @@
+ <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <!-- JS -->
+    <script type="text/javascript">
+
+    //CALSSE E HERANÇA CONSTRUTOR
+    class Poligono {
+      constructor(altura, largura) {
+        this.nome = 'Polígono';
+        this.altura = altura;
+        this.largura = largura;
+      }
+    }
+
+    class Quadrado extends Poligono {
+      constructor(altura) {
+        super(altura, altura);
+        this.nome = 'Quadrado';
+      }
+    }
+
+    //METODOS ESTATICOS
+    class Tripple {
+      static tripple(n) {
+        n = n | 1;
+        return n * 3;
+      }
+    }
+
+    class BiggerTripple extends Tripple {
+      static tripple(n) {
+        return super.tripple(n) * super.tripple(n);
+      }
+    }
+
+    //Usando extends com objetos pré-construidos
+    class myDate extends Date {
+      constructor() {
+        super();
+      }
+
+      getFormattedDate() {
+        var meses = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+        return this.getDate() + "-" + meses[this.getMonth()] + "-" + this.getFullYear();
+      }
+    }
+
+    //
+    
+
+
+
+    </script>
+    <!-- JS -->
+  </head>
+  <body>
+
+  </body>
+</html>

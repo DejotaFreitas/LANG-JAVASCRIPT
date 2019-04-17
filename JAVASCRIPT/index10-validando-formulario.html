@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <!-- JS -->
+    <script type="text/javascript">
+
+    function validar() {
+      var f = document.getElementById("formulario");
+      var cpf = f.cpf.value;
+      var email = f.email.value;
+      var re_cpf = /^([\d]{11,11})$/;
+      var re_email = /^[\w\.]+@\w+\.\w{2,3}(\.\w{2,3})?$/i;﻿
+      if (!re_cpf.test(cpf)) {
+          alert("CPF INVÁLIDO");
+      }
+      if (!re_email.test(email)) {
+          alert("EMAIL INVÁLIDO");
+      }
+    }
+
+
+
+
+    </script>
+      <!-- JS -->
+  </head>
+  <body>
+
+    <form id="formulario" action="index.html" method="post">
+        <fieldset>
+          <legend>Validação</legend>
+
+          <label for="cpf">CPF</label>
+          <input type="text" name="cpf">
+          <label for="email">Email</label>
+          <input type="text" name="email">
+          <button onclick="validar();" type="button" >Validar</button>
+
+        </fieldset>
+    </form>
+
+  </body>
+</html>

@@ -1,0 +1,93 @@
+ <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <!-- JS -->
+    <script type="text/javascript">
+
+    //CLASSE PESSOA
+    var Pessoa = function(nome, email) {
+      //variavel privada
+      var vari = "kkk";
+      //metodo get e set
+      this.vari = function(x) {
+        if (x) {
+          vari = x;
+        }else {
+          return vari;
+        }
+      }
+
+
+      //variavel publica
+      this.nome = "nome";
+      if (nome) {
+        this.nome = nome;
+      }
+      this.email = "email";
+      if (email) {
+        this.email = email;
+      }
+      //Metodo publico = THIS
+      this.imprimirNome = function () {
+        document.writeln( this.nome +" - "+ this.email +"<br>");
+      }
+      //Metodo privado = sem this
+      imprimirNome2 = function () {
+        document.writeln( this.nome +" - "+ this.email +"<br>");
+      }
+    }
+
+    //get e set varivel publica externo
+    Pessoa.prototype.setNome = function( nome ) {
+        this.nome = nome;
+    }
+
+    Pessoa.prototype.getNome = function( ) {
+        return this.nome;
+    }
+    //SINGLETON - Design Patterns
+    // equivalente a uma variavel estatica
+    Pessoa.instance = null;
+    //equivalente a um metodo estatica
+    Pessoa.getInstance = function( ) {
+      if ( !this.instance ){
+        this.instance = new Pessoa( );
+      }
+      return this.instance;
+    }
+
+    //TESTE
+    var p = new Pessoa("Dejota", "djxpgs@gmail.com");
+    p.imprimirNome();
+    //SINGLETON
+    var p1 = Pessoa.getInstance();
+    p1.setNome("Xuxa");
+    p1.imprimirNome();
+    Pessoa.getInstance().imprimirNome();
+
+    var p2 = new Pessoa("DASD","dfsd");
+    p2.vari("asdjfhsadkf");
+    alert(p1.vari());
+    alert(p2.vari());
+
+    //METODO QUE RECEBE PARAMETROS DE REFERENCIA DO OBJETO
+    var lockStatus = function(obejto, s1, s2, s3, s4, s5, s6){
+      random(6);
+      switch (tipo) {
+        case 1:  obejto.s1 += obejto.s1;  break;
+        case 2:  obejto.s2 += obejto.s2;  break;
+        case 6:  obejto.s3 += obejto.s3;  break;
+        case 4:  obejto.s4 += obejto.s4;  break;
+        case 5:  obejto.s5 += obejto.s5;  break;
+        case 6:  obejto.s6 += obejto.s6;  break;
+      }
+    }
+
+    </script>
+    <!-- JS -->
+  </head>
+  <body>
+
+  </body>
+</html>

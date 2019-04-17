@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <!-- JS -->
+    <script type="text/javascript">
+    // FUNCÂO
+    function dividir(x, y) {
+      return x/y;
+    }
+    alert(dividir(10, 2));
+
+    // IF ELSE
+    var idade =18;
+    if (idade > 18) {
+      alert("Maior de idade");
+    } else if (idade == 18) {
+      alert("Tem 18 anos");
+    } else {
+      alert("Menor de idade");
+    }
+
+    // SWITCH
+    var variavel = 4;
+    switch (variavel) {
+      case 1:
+      case 3:
+      case 5:
+      case 7:
+      case 9:
+        alert("IMPAR");
+        break;
+
+      case 0:
+      case 2:
+      case 4:
+      case 6:
+      case 8:
+        alert("PAR");
+        break;
+
+      default:
+      alert("NENHUM DOS CASOS");
+    }
+
+    for (var i = 0; i < 3; i++) {
+      alert("alerta: "+i);
+    }
+
+    //ARRAY
+    var numeros = new Array("Um", "Dois", "Três");
+    for (i in numeros) {
+      alert(numeros[i]);
+    }
+
+    //OBJETO CARRO
+    var Carro = {
+      nome: "Fuscao loco",
+      marca: "Ford",
+      modelo: "Fusca",
+      velocidade: "360 Km/h"
+    };
+    for (c in Carro) {
+      alert(c +": "+ Carro[c]);
+    }
+
+    while (true) {
+        alert("While");
+        break;
+    }
+
+    do {
+      alert("Do While");
+    } while (false);
+
+
+  //obejeto que tem um objeto
+    var Carro2 = {
+      nome: "Fuscao loco",
+      marca: "Ford",
+      modelo: "Fusca",
+      potencia: {
+      velocidade: "360 Km/h",
+      cavalos: "400"
+      }
+    };
+    //acessar atributos diretamente com escopo "with"
+    with(Carro2.potencia){
+      alert(velocidade+":"+cavalos);
+    }
+
+    </script>
+      <!-- JS -->
+  </head>
+  <body>
+  JavaScript
+  </body>
+</html>

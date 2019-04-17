@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <!-- JS -->
+    <script type="text/javascript">
+
+    var points1 = new Array(40, 100);  //array com dois elementos
+    var points2 = new Array(40);       //array com 40 elementos indefinidos
+
+    var a = new Array();
+    a[0] = "zero";
+    a[1] = "um";
+    a[2] = "dois"
+    document.writeln(a +"<br>");
+
+    var b = new Array("Zero", "Um", "Dois", "Três");
+    document.writeln(b +"<br>");
+
+    var c = [1, 2, 3, 4, 5];
+    document.writeln(c +"<br>");
+
+    //FILA
+    var d = new Array();
+    d.push(13);
+    d.push(7);
+    d.push(10);  //adciocina no final da fila
+    d.unshift(0); //adiciona no inicio da fila
+    d.shift(); //remove do inicio da fila
+    d.pop();  //remove do final da fila
+    document.writeln(d +"<br>");
+
+    /*
+    INVERTER
+    array.reverse();
+
+    ORDENAR
+    array.sort();
+
+    ALTERAR SEPARADOR PADRAO DO ARRAY DE VIRGULA(,) PARA PONTO E VIRGULA(;)
+    array.join(";");
+
+    CONCATENAR VARIOS ELEMENTOS OU OUTRO ARRAY AO UM ARRAY
+    array.concat("1", "a", "s52");
+
+    //VERIFICA SE É UM ARRAY
+    Array.isArray(array);
+
+    */
+
+    var bidimentcional = [
+      [1,2,3,4,5,6],
+      [7,8,9,10,11]
+    ]
+    document.writeln(bidimentcional[0][0] +"<br>");
+
+    //METODOS AVANÇADOS
+    var av = new Array("Zero", "Um", "Dois", "Três");
+
+    function todos(elem, ind, obj) {
+      return (typeof elem == "string");
+    }
+    //testa função do parametro com todos elementos do array
+    //retorna true se todos forem verdadeiro
+    document.writeln(av.every(todos) +"<br>");
+    //retorn true se pelo mensos 1 for verdadeiro
+    document.writeln(av.some(todos) +"<br>");
+
+    //metodo retornar todas verifica se tem O na palavas
+    function funcao(elem, ind, obj) {
+      return (elem.indexOf("o") > 0);
+    }
+    //retornar filtro de todas as palavras com a condição da função
+    document.writeln(av.filter(funcao) +"<br>");
+    //função deixar maiusculo
+    function funcaoMausculo(elem, ind, obj) {
+      return (elem = elem.toUpperCase());
+    }
+    //alterar valor do elementos de acordo com a função
+    document.writeln(av.map(funcaoMausculo) +"<br>"); 
+
+
+
+
+
+
+
+
+
+
+    </script>
+      <!-- JS -->
+  </head>
+  <body>
+
+  </body>
+</html>

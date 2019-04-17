@@ -1,0 +1,24 @@
+{
+	"nome" : "Luiz Otávio",
+	"sobrenome" : "Miranda",
+	"hobbies" : 
+	[
+		{ 
+			"Desenvolver" : 
+				[
+					"Em Javascript", 
+					"PHP"
+				] 
+		},
+		{ 
+			"Ler" : 
+			[
+				"Tech", 
+				"Notícias"
+			] 
+		},
+		{ 
+			"Beber" : "Cerveja" 
+		}
+	]
+}

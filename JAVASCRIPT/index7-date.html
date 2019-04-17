@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <!-- JS -->
+    <script type="text/javascript">
+
+    //FAZER MINHA PROPRIA BIBLIOTECA DE DATA
+    //MES COMEÇA DE 0 = MES-1
+    function zeroEsquerda(x) {
+      if (x >= 0 && x < 10) {
+          return "0"+x.toString();
+      }
+      return x;
+    }
+
+    var data = new Date(2016,11,6,8,27,32);
+    document.writeln(data +"<br>");
+    var diasSemana = ["Domingo", "Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado"];
+    document.writeln( diasSemana[data.getDay()] +"<br>");
+    document.writeln(data.getHours()+":"+data.getMinutes()+":"+data.getSeconds() +"<br>");
+    document.writeln(zeroEsquerda(data.getDate())+"/"+(data.getMonth()+1)+"/"+data.getFullYear() +"<br>");
+
+
+
+    </script>
+      <!-- JS -->
+  </head>
+  <body>
+
+  </body>
+</html>

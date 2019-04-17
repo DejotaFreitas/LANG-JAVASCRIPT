@@ -1,0 +1,70 @@
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <meta charset="utf-8">
+
+      <style media="screen">
+          *{
+            padding: 0px;
+            margin: 0px;
+            outline: none;
+            list-style: none;
+          }
+          body {
+            background: #34495e;
+            color: white;
+          }
+          body * {
+            font-family: ‘Lucida Console’, Monaco, 'Ubuntu Monospace', monospace;
+            font-size: 20px;
+          }
+          input {
+            margin: 3px;
+          }
+      </style>
+
+      <script type="text/javascript" src="0principal.js"></script>
+
+      <title>Validadores</title>
+    </head>
+    <body>
+
+      <form action="index.html" method="post">
+
+        <table>
+
+          <tr><th><label for="data">DATA</label>
+          </th><th><input type="text" name="data" id="data">
+          </th> </tr>
+
+          <tr><th><label for="cpf">CPF</label>
+          </th><th><input type="text" name="cpf" id="cpf">
+          </th></tr>
+
+          <tr><th><label for="celular">CELULAR</label>
+          </th><th><input type="text" name="celular" id="celular">
+          </th></tr>
+
+          <tr><th><label for="telefone">FONE</label>
+          </th><th><input type="text" name="telefone" id="telefone">
+          </th></tr>
+
+          <tr><th><label for="cnpj">CNPJ</label>
+          </th><th><input type="text" name="cnpj" id="cnpj">
+          </th></tr>
+
+          <tr><th>
+          </th><th><input type="SUBMIT" name="s" value="ENVIAR">
+          </th></tr>
+
+        </table>
+
+
+        <div id="div-notificacao">
+
+        </div>
+
+      </form>
+
+    </body>
+  </html>

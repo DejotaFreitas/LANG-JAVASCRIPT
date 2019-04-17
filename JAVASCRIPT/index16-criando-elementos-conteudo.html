@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <style media="screen">
+    * {
+      background-color: black;
+      color: white;
+      font-size: 30px;
+    }
+
+    </style>
+    <!-- JS -->
+    <script type="text/javascript">
+
+    window.onload = function() {
+      /*
+        //NÓS
+        createElement
+        createTextNode
+        createAttribute
+
+        //ATRIBUINDO AO NÓS
+        appendChild
+        removeChild
+        replaceChild
+
+        //filhos sem ()
+        .firstChild;
+        .lastChild;
+      */
+
+      //pegando div
+      var divi = document.getElementById("divi");
+      //criando lista
+      var ul = document.createElement("ul");
+      //adcionando lista a divi
+      divi.appendChild(ul);
+      //criando item da lista
+      var li = document.createElement("li");
+      //criando Nó de testo
+      var noTexto = document.createTextNode("1 Item da lista");
+      //adicxionando texto ao LI
+      li.appendChild(noTexto);
+      //adicionando LI a UL
+      ul.appendChild(li);
+
+      //criando atributo para mudar o estilo
+      li.setAttribute("style", "color:red");
+
+      //clonar elemento
+      var liClonado = li.cloneNode(true);
+      ul.appendChild(liClonado);
+
+      //removendo primeiro elemnto
+      //ul.removeChild(ul.firstChild);
+      //removendo ultimo elemento
+      //ul.removeChild(ul.lastChild);
+
+
+
+
+    }
+
+    </script>
+      <!-- JS -->
+  </head>
+  <body>
+
+    <div id="divi">
+
+    </div>
+
+  </body>
+</html>

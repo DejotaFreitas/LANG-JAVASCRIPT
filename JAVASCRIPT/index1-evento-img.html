@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>JavaScript</title>
+    <!-- CSS -->
+    <style media="screen">
+      img {
+        display: inline-block;
+        margin: 20px auto;
+      }
+    </style>
+    <!-- JS -->
+    <script type="text/javascript">
+      function trocarImg1() {
+        document.getElementById("img1").src="img/goku2.png";
+      }
+
+      function trocarImg2() {
+        document.getElementById("img2").src="img/goku3.png";
+      }
+    </script>
+
+  </head>
+  <!-- Evento de quando acabou de carregar a pagina de internet -->
+  <body onload="alert('Página Carregada.')">
+
+    <!-- evento ao clicar -->
+    <img onclick="trocarImg1();"
+    id="img1" src="img\goku1.png" width="300" height="500" />
+
+    <!-- Evento ao passar o mouse em cima -->
+    <img onmouseover="trocarImg2();"
+    id="img2" src="img\goku1.png" width="300" height="500" />
+
+
+  </body>
+</html>

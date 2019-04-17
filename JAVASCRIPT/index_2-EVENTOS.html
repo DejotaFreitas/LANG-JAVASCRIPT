@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <style media="screen">
+    * {
+      background-color: black;
+      color: white;
+      font-size:0px;
+    }
+    </style>
+    <!-- JS -->
+    <script type="text/javascript">
+
+    window.onload = function() {
+    document.writeln("" +"<br>");
+
+    //Eventos
+
+    //onBlur = quanto tirar focus do elemento = VALIDAÇÃO DE CAMPO
+    //onFocus = quando clicar dentro do elemento para escrever
+
+    //window.onbeforeunload = evendo quando sair a pagina
+
+    //EVENTOS DE MOUSE
+    //onClick = cliclar no elemento
+    //onMouseOver = passar mouse por cima
+    //onMouseOut = ao tirar o mouse do elemento
+    //onContextMenu = clicar com botao direito do mause
+    //ondblclick = ao dar double click (dois click rapidos)
+    //onmousedown = pressionar mause em um elemento
+    //Onmouseup = quando solta o o botao do mouse em cima de elemento
+
+    //Onmouseenter = quando o ponteiro é movido para um elemento
+    //Onmouseleave =  quando o ponteiro é movido para fora de um elemento
+    //Onmousemove =  quando o ponteiro está se movendo enquanto ele está sobre um elemento
+    //Onmouseover = quando o ponteiro é movido para um elemento, ou para um de seus filhos
+
+    //EVENTOS DE TECLADO
+    //onkeydown	= quando aperta uma tecla
+    //onkeypress = quando fica com tecla pressionado
+    //onkeyup = quando solta o tecla pressionado
+
+    //EVENTOS DE FORMULARIO
+    // Onabort = O evento ocorre quando o carregamento de um recurso foi interrompido
+    // Onbeforeunload = O evento ocorre antes que o documento esteja prestes a ser descarregado
+    // Onerror = O evento ocorre quando ocorre um erro ao carregar um arquivo externo
+    // Onhashchange = O evento ocorre quando houve alterações na parte âncora de um URL
+    // Onload = O evento ocorre quando um objeto foi carregado
+    // onpageshow = O evento ocorre quando o usuário navega para uma página da Web
+    // Onpagehide = O evento ocorre quando o usuário navega longe de uma página da Web
+    // Onresize = O evento ocorre quando a exibição do documento é redimensionada
+    // Onscroll = O evento ocorre quando a barra de rolagem de um elemento está sendo rolada
+    // Onunload = O evento ocorre uma vez que uma página foi descarregada (para <body>)
+
+    // EVENTOS DE ARRASTAR
+    // Ondrag = O evento ocorre quando um elemento está sendo arrastado
+    // Ondragend = O evento ocorre quando o usuário concluiu o arrastar de um elemento
+    // Ondragenter = O evento ocorre quando o elemento arrastado entra no alvo de queda
+    // Ondragleave = O evento ocorre quando o elemento arrastado deixa o alvo de queda
+    // Ondragover = O evento ocorre quando o elemento arrastado está sobre o alvo de queda
+    // Ondragstart = O evento ocorre quando o usuário começa a arrastar um elemento
+    // Ondrop = O evento ocorre quando o elemento arrastado é largado no alvo de queda
+
+    // EVENTO DA AREA DE TRANFERENCIA DE DADOS
+    // Oncopy = O evento ocorre quando o usuário copia o conteúdo de um elemento
+    // Oncut = O evento ocorre quando o usuário corta o conteúdo de um elemento
+    // Onpaste = O evento ocorre quando o usuário cola algum conteúdo em um elemento
+
+    // EVENTO DE IMPRESSÃO
+    // Onafterprint = O evento ocorre quando uma página começou a imprimir ou se a caixa de diálogo de impressão foi fechada
+    // Onbeforeprint = O evento ocorre quando uma página está prestes a ser impressa
+
+    // Eventos de mídia
+    // Onabort = O evento ocorre quando o carregamento de um suporte é abortado
+    // Oncanplay = O evento ocorre quando o navegador pode iniciar a reprodução da mídia (quando ela tiver buffer o suficiente para começar)
+    // Oncanplaythrough = O evento ocorre quando o navegador pode reproduzir através da mídia sem parar para buffer
+    // Ondurationchange = O evento ocorre quando a duração da mídia é alterada
+    // Onemptied = O evento ocorre quando algo ruim acontece e o arquivo de mídia está repentinamente indisponível (como inesperadamente desconecta)
+    // Onended = O evento ocorre quando a mídia chegou ao final (útil para mensagens como "obrigado por ouvir")
+    // Onerror = O evento ocorre quando ocorreu um erro durante o carregamento de um arquivo de mídia
+    // Onloadeddata = O evento ocorre quando os dados de mídia são carregados
+    // Onloadedmetadata = O evento ocorre quando os dados meta (como dimensões e duração) são carregados
+    // Onloadstart = O evento ocorre quando o navegador começa a procurar a mídia especificada
+    // Onpause = O evento ocorre quando a mídia é pausada pelo usuário ou programaticamente
+    // Onplay = O evento ocorre quando a mídia foi iniciada ou não é mais pausada
+    // Onplaying = O evento ocorre quando a mídia está sendo reproduzida após ter sido pausada ou parada para buffer
+    // Onprogress = O evento ocorre quando o navegador está em processo de obter os dados da mídia (download da mídia)
+    // Onratechange = O evento ocorre quando a velocidade de reprodução da mídia é alterada
+    // Onseeked = O evento ocorre quando o usuário termina de mover / pular para uma nova posição na mídia
+    // Onseeking = O evento ocorre quando o usuário começa a mover / pular para uma nova posição na mídia
+    // Onstalled = O evento ocorre quando o navegador está tentando obter dados de mídia, mas os dados não estão disponíveis
+    // Onsuspend = O evento ocorre quando o browser não está intencionalmente recebendo dados de mídia
+    // Ontimeupdate = O evento ocorre quando a posição de reprodução foi alterada (como quando o usuário avança rapidamente para um ponto diferente na mídia)
+    // Onvolumechange = O evento ocorre quando o volume da mídia mudou (inclui ajustar o volume para "mudo")
+    // Onwaiting = O evento ocorre quando a mídia pausou, mas deve ser retomada (como quando a mídia pausa para armazenar mais dados)
+
+    // Eventos animação
+    // Animationend = O evento ocorre quando uma animação CSS foi concluída
+    // Animationiteration = O evento ocorre quando uma animação CSS é repetida
+    // Animationstart = O evento ocorre quando uma animação CSS foi iniciada
+
+    // Transiçã= O eventos
+    // Transitionend = O evento ocorre quando uma transição CSS foi concluída
+
+    // Eventos enviados pelo servidor
+    // Onerror = O evento ocorre quando ocorre um erro com a origem d O evento
+    // Onmessage = O evento ocorre quando uma mensagem é recebida através da fonte de evento
+    // Onopen = O evento ocorre quando uma conexão com a fonte de evento é aberta
+
+    // Eventos Diversos
+    // Onmessage = O evento ocorre quando uma mensagem é recebida através ou de um objeto (WebSocket, Web Worker, Origem d= O evento ou um quadro filho ou uma janela pai)
+    // Onmousewheel = Deprecated. Use = O evento onwheel em vez disso
+    // Ononline = O evento ocorre quando o navegador começa a trabalhar on-line
+    // Onoffline = O evento ocorre quando o navegador começa a trabalhar off-line
+    // Onpopstate = O evento ocorre quando o histórico da janela é alterado
+    // Onshow = O evento ocorre quando um elemento <menu> é mostrado como um menu de contexto
+    // Onstorage = O evento ocorre quando uma área de armazenamento da Web é atualizada
+    // Overggle = O evento ocorre quando o usuário abre ou fecha o elemento <details>
+    // Onwheel = O evento ocorre quando a roda do mouse rola para cima ou para baixo sobre um elemento
+
+    // Toque Eventos
+    // Ontouchcancel = O evento ocorre quando o toque é interrompido
+    // Ontouchend = O evento ocorre quando um dedo é removido de uma tela de toque
+    // Ontouchmove = O evento ocorre quando um dedo é arrastado através da tela
+    // Ontouchstart = O evento ocorre quando um dedo é colocado em uma tela de toque
+
+    // Constante
+    // CAPTURING_PHASE = A fase de evento atual é a fase de captura (1) 1
+    // AT_TARGET = O evento atual está na fase de destino, isto é, está sendo avaliado no alvo do evento (2)
+    // BUBBLING_PHASE = A fase do evento atual é a fase borbulhante (3)
+
+    // Propriedades
+    // Bubbles = Retorna se um evento específico é ou não um evento borbulhante
+    // Cancelable = Retorna se um evento pode ou não impedir a ação padrão
+    // CurrentTarget = Retorna o elemento cujos ouvintes de evento dispararam o evento
+    // DefaultPrevented = Retorna se o método preventDefault () foi chamado ou não para o evento
+    // EventPhase = Retorna qual fase do fluxo de eventos está sendo avaliada
+    // IsTrusted = Retorna se um evento é confiável ou não
+    // Target = Retorna o elemento que acionou o evento
+    // TimeStamp = Retorna o tempo (em milissegundos em relação à época) em que o evento foi criado
+    // Type = Retorna o nome do evento
+    // View = Retorna uma referência ao objeto Window onde o evento ocorreu
+
+    // Métodos
+    // PreventDefault () = Cancela o evento se ele for cancelável, significando que a ação padrão que pertence ao evento não ocorrerá
+    // StopImmediatePropagation () = Impede que outros ouvintes do mesmo evento sejam chamados
+    // StopPropagation () = Impede a propagação de um evento durante o fluxo de eventos
+
+    // Objeto MouseEvent
+    // AltKey = Retorna se a tecla "ALT" foi pressionada quando o evento do mouse foi disparado
+    // Button = Retorna qual botão do mouse foi pressionado quando o evento do mouse foi disparado
+    // = Retorna quais botões do mouse foram pressionados quando o evento do mouse foi disparado
+    // ClientX = Retorna a coordenada horizontal do ponteiro do mouse, em relação à janela atual, quando o evento do mouse foi acionado
+    // ClientY = Retorna a coordenada vertical do ponteiro do mouse, relativa à janela atual, quando o evento do mouse foi acionado
+    // CtrlKey = Retorna se a tecla "CTRL" foi pressionada quando o evento do mouse foi acionado
+    // Detail = Retorna um número que indica quantas vezes o mouse foi clicado
+    // MetaKey = Retorna se a tecla "META" foi pressionada quando um evento foi disparado
+    // PageX = Retorna a coordenada horizontal do ponteiro do mouse, em relação ao documento, quando o evento do mouse foi acionado
+    // PageY = Retorna a coordenada vertical do ponteiro do mouse, em relação ao documento, quando o evento do mouse foi acionado
+    // RelatedTarget = Retorna o elemento relacionado ao elemento que acionou o evento mouse
+    // ScreenX = Retorna a coordenada horizontal do ponteiro do mouse, em relação à tela, quando um evento foi disparado
+    // ScreenY = Retorna a coordenada vertical do ponteiro do mouse, em relação à tela, quando um evento foi disparado
+    // ShiftKey = Retorna se a tecla "SHIFT" foi pressionada quando um evento foi disparado
+    // Que = Retorna qual botão do mouse foi pressionado quando o evento do mouse foi disparado
+
+    // Objeto KeyboardEvent
+    // AltKey = Retorna se a tecla "ALT" foi pressionada quando o evento de chave foi disparado
+    // CtrlKey = Retorna se a tecla "CTRL" foi pressionada quando o evento chave foi disparado
+    // CharCode = Retorna o código de caractere Unicode da chave que acionou o evento onkeypress
+    // Key = Retorna o valor da chave da chave representada pelo evento
+    // KeyCode = Retorna o código de caractere Unicode da chave que acionou o evento onkeypress ou o código de chave Unicode da chave que acionou o evento onkeydown ou onkeyup
+    // Location = Retorna o local de uma chave no teclado ou dispositivo
+    // MetaKey = Retorna se a tecla "meta" foi pressionada quando o evento chave foi disparado
+    // ShiftKey = Retorna se a tecla "SHIFT" foi pressionada quando o evento chave foi disparado
+    // Que = Retorna o código de caractere Unicode da chave que acionou o evento onkeypress ou o código de chave Unicode da chave que acionou o evento onkeydown ou onkeyup
+
+    // Objeto HashChangeEvent
+    // NewURL = Retorna o URL do documento, depois que o hash foi alterado
+    // OldURL = Retorna o URL do documento, antes do hash foi alterado
+
+    // Objeto PageTransitionEvent
+    // Persisted = Retorna se a página da Web foi armazenada em cache pelo navegador
+
+    // Objeto FocusEvent
+    // RelatedTarget = Retorna o elemento relacionado ao elemento que acionou o evento
+
+    // Objeto AnimationEvent
+    // AnimationName = Retorna o nome da animação
+    // ElapsedTime = Retorna o número de segundos em que uma animação foi executada
+
+    // Objeto TransitionEvent
+    // PropertyName = Retorna o nome da propriedade CSS associada à transição
+    // ElapsedTime = Retorna o número de segundos em que uma transição foi executada
+
+    // Objeto WheelEvent
+    // DeltaX = Retorna a quantidade de rolagem horizontal de uma roda de mouse (eixo x)
+    // DeltaY = Retorna a quantidade de rolagem vertical de uma roda do mouse (y-axis)
+    // DeltaZ = Retorna a quantidade de rolagem de uma roda de mouse para o eixo z
+    // DeltaMode = Retorna um número que representa a unidade de medida para valores delta (pixels, linhas ou páginas)
+
+
+    }
+
+    </script>
+      <!-- JS -->
+  </head>
+  <body>
+
+  </body>
+</html>

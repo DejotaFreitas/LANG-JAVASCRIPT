@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <style media="screen">
+    * {
+      background-color: black;
+    }
+      #relogio {
+        font-size: 30px;
+        color: white;
+        width: auto;
+      }
+    </style>
+    <!-- JS -->
+    <script type="text/javascript">
+
+    window.onload = function() {
+      document.getElementById("imgl").onclick = ligar;
+      //repete a cada 1s
+      setInterval(atualizarRelogio, 1000);
+    }
+
+    function ligar() {
+      document.getElementById("imgl").src="http://imagensxti.xpg.uol.com.br/img/xlamp_on.png";
+      //desliga depois de 2s
+      setTimeout("desligar()", 2000);
+    }
+
+    function desligar() {
+      document.getElementById("imgl").src="http://imagensxti.xpg.uol.com.br/img/xlamp_off.png";
+    }
+
+  function atualizarRelogio() {
+    var data = new Date();
+    var hora = zeroEsquerda(data.getHours())+":"+zeroEsquerda(data.getMinutes())+":"+zeroEsquerda(data.getSeconds());
+    document.getElementById("relogio").innerHTML = hora;
+  }
+  function zeroEsquerda(x) {
+    if (x >= 0 && x < 10) {
+        return "0"+x.toString();
+    }
+    return x;
+  }
+
+    //parar intervalo
+    //clearTimeout
+    //clearInterval
+
+    </script>
+      <!-- JS -->
+  </head>
+  <body>
+    <div id="relogio">
+        00:00:00
+    </div>
+    <img id="imgl" src="http://imagensxti.xpg.uol.com.br/img/xlamp_off.png" alt="Lampada">
+
+  </body>
+</html>

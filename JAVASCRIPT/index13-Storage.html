@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <style media="screen">
+    * {
+      background-color: black;
+      font-size: 30px;
+      color: white;
+    }
+
+    </style>
+    <!-- JS -->
+    <script type="text/javascript">
+
+    window.onload = function() {
+
+      var texto = document.getElementById("texto");
+      var salvar = document.getElementById("salvar");
+      var exibir = document.getElementById("exibir");
+      var paragrafo = document.getElementById("paragrafo");
+
+      salvar.onclick = function() {
+        localStorage.setItem("texto", texto.value);
+      }
+
+      exibir.onclick = function() {
+        paragrafo.innerHTML = localStorage.getItem("texto");
+
+      }
+
+    }
+
+      function armazemTemporarioSessao() {
+        // Get the text field that we're going to track
+        var field = document.getElementById("field");
+        // See if we have an autosave value
+        // (this will only happen if the page is accidentally refreshed)
+        if ( sessionStorage.autosave ) {
+            // Restore the contents of the text field
+            field.value = sessionStorage.autosave;
+        }
+        // Check the contents of the text field every second
+        setInterval(function(){
+          // And save the results into the session storage object
+          sessionStorage.autosave = field.value;
+        }, 1000);
+      }
+
+
+
+    </script>
+      <!-- JS -->
+  </head>
+  <body>
+
+    <div id="div">
+        <input type="text" id="texto">
+        <button type="button" id="salvar">Salvar</button>
+        <button type="button" id="exibir">Exibir</button>
+        <p id="paragrafo"></p>
+    </div>
+
+  </body>
+</html>

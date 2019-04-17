@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <!-- JS -->
+    <script type="text/javascript">
+
+    function calcularIMC() {
+      var f = document.getElementById("formulario");
+      var peso = f.peso.value;
+      var altura = f.altura.value / 100;
+      var imc = peso / (altura * altura);
+      f.imc.value = imc.toFixed(2); //2 casas depois da virgula.
+    }
+
+
+
+    </script>
+      <!-- JS -->
+  </head>
+  <body>
+
+    <form id="formulario" action="index.html" method="post">
+        <fieldset>
+          <legend>IMC</legend>
+          <label for="peso">PESO</label>
+          <input type="text" name="peso" id="peso">
+          <label for="altura">ALTURA</label>
+          <input type="text" name="altura" id="altura">
+          <label for="imc">IMC</label>
+          <input type="text" name="imc" id="imc" disabled>
+          <button onclick="calcularIMC();" type="button" >Calcular</button>
+        </fieldset>
+    </form>
+
+  </body>
+</html>
